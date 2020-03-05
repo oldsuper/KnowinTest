@@ -1,0 +1,231 @@
+- test:
+    api: /nlu
+    assert:
+    - eq: ['$.intents[0].domain', 'iot']
+    - contain: ['$.intents[0].slots', {"values": ["灯"], "name": "device"}]
+    - contain: ['$.intents[0].slots', {"values": ["打开"], "name": "action"}]
+    assert_rule: ''
+    host: http://39.100.203.200:8020
+    id: 1
+    pattern_id: light-on-3
+    request:
+      query: '灯打开'
+      re_pattern: !!python/str '(灯)(打开|开开)'
+- test:
+    api: /nlu
+    assert:
+    - eq: ['$.intents[0].domain', 'iot']
+    - contain: ['$.intents[0].slots', {"values": ["灯"], "name": "device"}]
+    - contain: ['$.intents[0].slots', {"values": ["开开"], "name": "action"}]
+    assert_rule: ''
+    host: http://39.100.203.200:8020
+    id: 1
+    pattern_id: light-on-3
+    request:
+      query: '灯开开'
+      re_pattern: !!python/str '(灯)(打开|开开)'
+- test:
+    api: /nlu
+    assert:
+    - eq: ['$.intents[0].domain', 'iot']
+    - contain: ['$.intents[0].slots', {"values": ["灯"], "name": "device"}]
+    - contain: ['$.intents[0].slots', {"values": ["关掉"], "name":"action"}]
+    assert_rule: ''
+    host: http://39.100.203.200:8020
+    id: 2
+    pattern_id: light04
+    request:
+      query: '灯关掉'
+      re_pattern: !!python/str '(灯)(关掉|关闭|关|闭)'
+- test:
+    api: /nlu
+    assert:
+    - eq: ['$.intents[0].domain', 'iot']
+    - contain: ['$.intents[0].slots', {"values": ["灯"], "name": "device"}]
+    - contain: ['$.intents[0].slots', {"values": ["关闭"], "name":
+        "action"}]
+    assert_rule: ''
+    host: http://39.100.203.200:8020
+    id: 2
+    pattern_id: light04
+    request:
+      query: '灯关闭'
+      re_pattern: !!python/str '(灯)(关掉|关闭|关|闭)'
+- test:
+    api: /nlu
+    assert:
+    - eq: ['$.intents[0].domain', 'iot']
+    - contain: ['$.intents[0].slots', {"values": ["卧室"],
+        "name": "location"}]
+    - contain: ['$.intents[0].slots', {"values": ["灯"], "name": "device"}]
+    - contain: ['$.intents[0].slots', {"values": ["关掉"], "name":
+        "action"}]
+    assert_rule: ''
+    host: http://39.100.203.200:8020
+    id: 3
+    pattern_id: lightoff-1
+    request:
+      query: '把卧室的灯关掉'
+      re_pattern: !!python/str '把(卧室|厨房|厕所|客厅|主卧|次卧|一楼|二楼|一层|二层|家)的(灯|大灯)(关掉|关上|关|闭)'
+- test:
+    api: /nlu
+    assert:
+    - eq: ['$.intents[0].domain', 'iot']
+    - contain: ['$.intents[0].slots', {"values": ["主卧"],
+        "name": "location"}]
+    - contain: ['$.intents[0].slots', {"values": ["灯"], "name": "device"}]
+    - contain: ['$.intents[0].slots', {"values": ["关上"], "name":
+        "action"}]
+    assert_rule: ''
+    host: http://39.100.203.200:8020
+    id: 3
+    pattern_id: lightoff-1
+    request:
+      query: '把主卧的灯关上'
+      re_pattern: !!python/str '把(卧室|厨房|厕所|客厅|主卧|次卧|一楼|二楼|一层|二层|家)的(灯|大灯)(关掉|关上|关|闭)'
+- test:
+    api: /nlu
+    assert:
+    - eq: ['$.intents[0].domain', 'iot']
+    - contain: ['$.intents[0].slots', {"values": ["卧室"],
+        "name": "location"}]
+    - contain: ['$.intents[0].slots', {"values": ["大灯"], "name": "device"}]
+    - contain: ['$.intents[0].slots', {"values": ["打开"], "name": "action"}]
+    assert_rule: ''
+    host: http://39.100.203.200:8020
+    id: 4
+    pattern_id: lighton-1
+    request:
+      query: '把卧室的大灯打开'
+      re_pattern: !!python/str '把(卧室|厨房|厕所|客厅|主卧|次卧|一楼|二楼|一层|二层|家)的(灯|大灯)(打开|开开)'
+- test:
+    api: /nlu
+    assert:
+    - eq: ['$.intents[0].domain', 'iot']
+    - contain: ['$.intents[0].slots', {"values": ["一楼"],
+        "name": "location"}]
+    - contain: ['$.intents[0].slots', {"values": ["灯"], "name": "device"}]
+    - contain: ['$.intents[0].slots', {"values": ["开开"], "name": "action"}]
+    assert_rule: ''
+    host: http://39.100.203.200:8020
+    id: 4
+    pattern_id: lighton-1
+    request:
+      query: '把一楼的灯开开'
+      re_pattern: !!python/str '把(卧室|厨房|厕所|客厅|主卧|次卧|一楼|二楼|一层|二层|家)的(灯|大灯)(打开|开开)'
+- test:
+    api: /nlu
+    assert:
+    - eq: ['$.intents[0].domain', 'iot']
+    - contain: ['$.intents[0].slots', {"values": ["打开"], "name": "action"}]
+    - contain: ['$.intents[0].slots', {"values": ["卧室"],
+        "name": "location"}]
+    - contain: ['$.intents[0].slots', {"values": ["灯"], "name": "device"}]
+    assert_rule: ''
+    host: http://39.100.203.200:8020
+    id: 5
+    pattern_id: lighton-2
+    request:
+      query: '打开卧室的灯'
+      re_pattern: !!python/str '(打开|开开)(卧室|厨房|厕所|客厅|主卧|次卧|一楼|二楼|一层|二层|家)的(灯|大灯)'
+- test:
+    api: /nlu
+    assert:
+    - eq: ['$.intents[0].domain', 'iot']
+    - contain: ['$.intents[0].slots', {"values": ["开开"], "name": "action"}]
+    - contain: ['$.intents[0].slots', {"values": ["家"],
+        "name": "location"}]
+    - contain: ['$.intents[0].slots', {"values": ["大灯"], "name": "device"}]
+    assert_rule: ''
+    host: http://39.100.203.200:8020
+    id: 5
+    pattern_id: lighton-2
+    request:
+      query: '开开家的大灯'
+      re_pattern: !!python/str '(打开|开开)(卧室|厨房|厕所|客厅|主卧|次卧|一楼|二楼|一层|二层|家)的(灯|大灯)'
+- test:
+    api: /nlu
+    assert:
+    - eq: ['$.intents[0].domain', 'iot']
+    - contain: ['$.intents[0].slots', {"values": ["关掉"], "name":
+        "action"}]
+    - contain: ['$.intents[0].slots', {"values": ["客厅"],
+        "name": "location"}]
+    - contain: ['$.intents[0].slots', {"values": ["灯"], "name": "device"}]
+    assert_rule: ''
+    host: http://39.100.203.200:8020
+    id: 6
+    pattern_id: lightoff-2
+    request:
+      query: '关掉客厅的灯'
+      re_pattern: !!python/str '(关掉|关上|关|闭)(卧室|厨房|厕所|客厅|主卧|次卧|一楼|二楼|一层|二层|家)的(灯|大灯)'
+- test:
+    api: /nlu
+    assert:
+    - eq: ['$.intents[0].domain', 'iot']
+    - contain: ['$.intents[0].slots', {"values": ["关上"], "name":
+        "action"}]
+    - contain: ['$.intents[0].slots', {"values": ["二楼"],
+        "name": "location"}]
+    - contain: ['$.intents[0].slots', {"values": ["大灯"], "name": "device"}]
+    assert_rule: ''
+    host: http://39.100.203.200:8020
+    id: 6
+    pattern_id: lightoff-2
+    request:
+      query: '关上二楼的大灯'
+      re_pattern: !!python/str '(关掉|关上|关|闭)(卧室|厨房|厕所|客厅|主卧|次卧|一楼|二楼|一层|二层|家)的(灯|大灯)'
+- test:
+    api: /nlu
+    assert:
+    - eq: ['$.intents[0].domain', 'iot']
+    - contain: ['$.intents[0].slots', {"values": ["打开"], "name": "action"}]
+    - contain: ['$.intents[0].slots', {"values": ["灯"], "name": "device"}]
+    assert_rule: ''
+    host: http://39.100.203.200:8020
+    id: 7
+    pattern_id: light-on-4
+    request:
+      query: '打开灯'
+      re_pattern: !!python/str '(打开|开开)(灯)'
+- test:
+    api: /nlu
+    assert:
+    - eq: ['$.intents[0].domain', 'iot']
+    - contain: ['$.intents[0].slots', {"values": ["开开"], "name": "action"}]
+    - contain: ['$.intents[0].slots', {"values": ["灯"], "name": "device"}]
+    assert_rule: ''
+    host: http://39.100.203.200:8020
+    id: 7
+    pattern_id: light-on-4
+    request:
+      query: '开开灯'
+      re_pattern: !!python/str '(打开|开开)(灯)'
+- test:
+    api: /nlu
+    assert:
+    - eq: ['$.intents[0].domain', 'iot']
+    - contain: ['$.intents[0].slots', {"values": ["关掉"], "name":
+        "action"}]
+    - contain: ['$.intents[0].slots', {"values": ["灯"], "name": "device"}]
+    assert_rule: ''
+    host: http://39.100.203.200:8020
+    id: 8
+    pattern_id: light06
+    request:
+      query: '关掉灯'
+      re_pattern: !!python/str '(关掉|关闭|关|闭)(灯)'
+- test:
+    api: /nlu
+    assert:
+    - eq: ['$.intents[0].domain', 'iot']
+    - contain: ['$.intents[0].slots', {"values": ["闭"], "name":
+        "action"}]
+    - contain: ['$.intents[0].slots', {"values": ["灯"], "name": "device"}]
+    assert_rule: ''
+    host: http://39.100.203.200:8020
+    id: 8
+    pattern_id: light06
+    request:
+      query: '闭灯'
+      re_pattern: !!python/str '(关掉|关闭|关|闭)(灯)'
