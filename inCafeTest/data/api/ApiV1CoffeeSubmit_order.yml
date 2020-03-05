@@ -1,0 +1,21 @@
+name: set voucher status
+base_url: $base_url
+variables:
+  expect_status_code: 200
+request:
+  url: /api/v1/coffee/submit_order
+  method: POST
+  headers:
+    Content-Type: application/json
+  json:
+    {
+      "order": $order,
+#        [{"coffee_id":5,"amount":1},{"coffee_id":6,"amount":1},{"coffee_id":8,"amount":1},{"coffee_id":10,"amount":1},
+#              {"coffee_id":12,"amount":1}],
+      "app_id":0,
+      "user_id": $user_id,
+      "rd_session": $rd_session
+    }
+validate:
+  - eq: [status_code, $expect_status_code]
+  - eq: [content.code, 0]

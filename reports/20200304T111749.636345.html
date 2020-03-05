@@ -1,0 +1,1001 @@
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> - TestReport</title>
+  <style>
+    body {
+      background-color: #f2f2f2;
+      color: #333;
+      margin: 0 auto;
+      width: 960px;
+    }
+    #summary {
+      width: 960px;
+      margin-bottom: 20px;
+    }
+    #summary th {
+      background-color: skyblue;
+      padding: 5px 12px;
+    }
+    #summary td {
+      background-color: lightblue;
+      text-align: center;
+      padding: 4px 8px;
+    }
+    .details {
+      width: 960px;
+      margin-bottom: 20px;
+    }
+    .details th {
+      background-color: skyblue;
+      padding: 5px 12px;
+    }
+    .details tr .passed {
+      background-color: lightgreen;
+    }
+    .details tr .failed {
+      background-color: red;
+    }
+    .details tr .unchecked {
+      background-color: gray;
+    }
+    .details td {
+      background-color: lightblue;
+      padding: 5px 12px;
+    }
+    .details .detail {
+      background-color: lightgrey;
+      font-size: smaller;
+      padding: 5px 10px;
+      line-height: 20px;
+      text-align: left;
+    }
+    .details .success {
+      background-color: greenyellow;
+    }
+    .details .error {
+      background-color: red;
+    }
+    .details .failure {
+      background-color: salmon;
+    }
+    .details .skipped {
+      background-color: gray;
+    }
+
+    .button {
+      font-size: 1em;
+      padding: 6px;
+      width: 4em;
+      text-align: center;
+      background-color: #06d85f;
+      border-radius: 20px/50px;
+      cursor: pointer;
+      transition: all 0.3s ease-out;
+    }
+    a.button{
+      color: gray;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .button:hover {
+      background: #2cffbd;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.7);
+      transition: opacity 500ms;
+      visibility: hidden;
+      opacity: 0;
+      line-height: 25px;
+    }
+    .overlay:target {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .popup {
+      margin: 70px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      width: 50%;
+      position: relative;
+      transition: all 3s ease-in-out;
+    }
+
+    .popup h2 {
+      margin-top: 0;
+      color: #333;
+      font-family: Tahoma, Arial, sans-serif;
+    }
+    .popup .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      transition: all 200ms;
+      font-size: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      color: #333;
+    }
+    .popup .close:hover {
+      color: #06d85f;
+    }
+    .popup .content {
+      max-height: 80%;
+      overflow: auto;
+      text-align: left;
+    }
+    .popup .separator {
+      color:royalblue
+    }
+
+    @media screen and (max-width: 700px) {
+      .box {
+        width: 70%;
+      }
+      .popup {
+        width: 70%;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <h1>Test Report: </h1>
+
+  <h2>Summary</h2>
+  <table id="summary">
+    <tr>
+      <th>START AT</th>
+      <td colspan="4">2020-03-04T11:17:49.636345</td>
+    </tr>
+    <tr>
+      <th>DURATION</th>
+      <td colspan="4">0.324 seconds</td>
+    </tr>
+    <tr>
+      <th>PLATFORM</th>
+      <td>HttpRunner 2.5.7 </td>
+      <td>CPython 2.7.17 </td>
+      <td colspan="2">Darwin-18.7.0-x86_64-i386-64bit</td>
+    </tr>
+    <tr>
+      <th>STAT</th>
+      <th colspan="2">TESTCASES (success/fail)</th>
+      <th colspan="2">TESTSTEPS (success/fail/error/skip)</th>
+    </tr>
+    <tr>
+      <td>total (details) =></td>
+      <td colspan="2">1 (1/0)</td>
+      <td colspan="2">3 (3/0/0/0)</td>
+    </tr>
+  </table>
+
+  <h2>Details</h2>
+
+  
+  
+  <h3>voucher_status_workflow</h3>
+  <table id="suite_1" class="details">
+    <tr>
+      <td>TOTAL: 3</td>
+      <td>SUCCESS: 3</td>
+      <td>FAILED: 0</td>
+      <td>ERROR: 0</td>
+      <td>SKIPPED: 0</td>
+    </tr>
+    <tr>
+      <th>Status</th>
+      <th colspan="2">Name</th>
+      <th>Response Time</th>
+      <th>Detail</th>
+    </tr>
+
+    
+    
+    
+    <tr id="record_1_1">
+      <th class="success" style="width:5em;">success</th>
+      <td colspan="2">list_voucher_list</td>
+      <td style="text-align:center;width:6em;">77.86 ms</td>
+      <td class="detail">
+
+        
+        
+        <a class="button" href="#popup_log_1_1_1">log-1</a>
+        <div id="popup_log_1_1_1" class="overlay">
+          <div class="popup">
+            <h2>Request and Response data</h2>
+            <a class="close" href="#record_1_1_1">&times;</a>
+
+            <div class="content">
+              <h3>Name: list_voucher_list</h3>
+
+              
+
+              
+
+              <h3>Request:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                            http://39.100.203.200:5920/api/v1/coffee/voucher_list?status=1&amp;user_id=11&amp;app_id=0&amp;start=0&amp;limit=10&amp;rd_session=L1JLG%2BUwziQX2jDaQRiEdmcXDeMMc9reBKRGx4Q2bV2Zap%2B428xgenUbYalr0Ugv%2FW%2FBjAqtuuBAtYkAsdWPlw%3D%3D
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                            <pre>{
+  &#34;Connection&#34;: &#34;keep-alive&#34;, 
+  &#34;Accept-Encoding&#34;: &#34;gzip, deflate&#34;, 
+  &#34;Accept&#34;: &#34;*/*&#34;, 
+  &#34;User-Agent&#34;: &#34;python-requests/2.23.0&#34;
+}</pre>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                            GET
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>Response:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>body</th>
+                        <td>
+                          
+                            
+                              <pre>{
+  &#34;total&#34;: 18, 
+  &#34;data&#34;: [
+    {
+      &#34;status&#34;: 1, 
+      &#34;price&#34;: 0, 
+      &#34;name_cn&#34;: &#34;冰美式&#34;, 
+      &#34;due_time&#34;: 1583355515000, 
+      &#34;voucher_id&#34;: 1421, 
+      &#34;name_en&#34;: &#34;iced American&#34;
+    }, 
+    {
+      &#34;status&#34;: 1, 
+      &#34;price&#34;: 0, 
+      &#34;name_cn&#34;: &#34;热拿铁&#34;, 
+      &#34;due_time&#34;: 1583355515000, 
+      &#34;voucher_id&#34;: 1419, 
+      &#34;name_en&#34;: &#34;Hot Latte&#34;
+    }, 
+    {
+      &#34;status&#34;: 1, 
+      &#34;price&#34;: 0, 
+      &#34;name_cn&#34;: &#34;冰拿铁&#34;, 
+      &#34;due_time&#34;: 1583355515000, 
+      &#34;voucher_id&#34;: 1420, 
+      &#34;name_en&#34;: &#34;Iced Caffe Latte&#34;
+    }, 
+    {
+      &#34;status&#34;: 1, 
+      &#34;price&#34;: 0, 
+      &#34;name_cn&#34;: &#34;冰拿铁&#34;, 
+      &#34;due_time&#34;: 1583355123000, 
+      &#34;voucher_id&#34;: 1415, 
+      &#34;name_en&#34;: &#34;Iced Caffe Latte&#34;
+    }, 
+    {
+      &#34;status&#34;: 1, 
+      &#34;price&#34;: 0, 
+      &#34;name_cn&#34;: &#34;热拿铁&#34;, 
+      &#34;due_time&#34;: 1583355123000, 
+      &#34;voucher_id&#34;: 1414, 
+      &#34;name_en&#34;: &#34;Hot Latte&#34;
+    }, 
+    {
+      &#34;status&#34;: 1, 
+      &#34;price&#34;: 0, 
+      &#34;name_cn&#34;: &#34;牛奶&#34;, 
+      &#34;due_time&#34;: 1583355123000, 
+      &#34;voucher_id&#34;: 1418, 
+      &#34;name_en&#34;: &#34;Milk&#34;
+    }, 
+    {
+      &#34;status&#34;: 1, 
+      &#34;price&#34;: 0, 
+      &#34;name_cn&#34;: &#34;热美式&#34;, 
+      &#34;due_time&#34;: 1583355123000, 
+      &#34;voucher_id&#34;: 1417, 
+      &#34;name_en&#34;: &#34;Hot Coffee&#34;
+    }, 
+    {
+      &#34;status&#34;: 1, 
+      &#34;price&#34;: 0, 
+      &#34;name_cn&#34;: &#34;冰美式&#34;, 
+      &#34;due_time&#34;: 1583355123000, 
+      &#34;voucher_id&#34;: 1416, 
+      &#34;name_en&#34;: &#34;iced American&#34;
+    }, 
+    {
+      &#34;status&#34;: 1, 
+      &#34;price&#34;: 0, 
+      &#34;name_cn&#34;: &#34;冰拿铁&#34;, 
+      &#34;due_time&#34;: 1583353014000, 
+      &#34;voucher_id&#34;: 1410, 
+      &#34;name_en&#34;: &#34;Iced Caffe Latte&#34;
+    }, 
+    {
+      &#34;status&#34;: 1, 
+      &#34;price&#34;: 0, 
+      &#34;name_cn&#34;: &#34;牛奶&#34;, 
+      &#34;due_time&#34;: 1583353014000, 
+      &#34;voucher_id&#34;: 1413, 
+      &#34;name_en&#34;: &#34;Milk&#34;
+    }
+  ]
+}</pre>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            UTF-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            http://39.100.203.200:5920/api/v1/coffee/voucher_list?status=1&user_id=11&app_id=0&start=0&limit=10&rd_session=L1JLG%2BUwziQX2jDaQRiEdmcXDeMMc9reBKRGx4Q2bV2Zap%2B428xgenUbYalr0Ugv%2FW%2FBjAqtuuBAtYkAsdWPlw%3D%3D
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            <pre>{
+  &#34;Date&#34;: &#34;Wed, 04 Mar 2020 11:17:49 GMT&#34;, 
+  &#34;Content-Length&#34;: &#34;1135&#34;, 
+  &#34;Content-Type&#34;: &#34;application/json; charset=UTF-8&#34;, 
+  &#34;Server&#34;: &#34;L&#34;
+}</pre>
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            OK
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            application/json; charset=UTF-8
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              <h3>Validators:</h3>
+                <div style="overflow: auto">
+                
+                
+                <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        status_code
+                      </td>
+                      <td>equals</td>
+                      <td>LazyString($expect_status_code)</td>
+                      <td>200</td>
+                    </tr>
+                    
+                </table>
+                
+
+                
+                
+              </div>
+
+              <h3>Statistics:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>1135</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>77.86</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>74.327</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+
+        
+
+      </td>
+    </tr>
+  
+    
+    
+    <tr id="record_1_2">
+      <th class="success" style="width:5em;">success</th>
+      <td colspan="2">update_voucher_status_from_1_to_3</td>
+      <td style="text-align:center;width:6em;">37.04 ms</td>
+      <td class="detail">
+
+        
+        
+        <a class="button" href="#popup_log_1_2_1">log-1</a>
+        <div id="popup_log_1_2_1" class="overlay">
+          <div class="popup">
+            <h2>Request and Response data</h2>
+            <a class="close" href="#record_1_2_1">&times;</a>
+
+            <div class="content">
+              <h3>Name: update_voucher_status_from_1_to_3</h3>
+
+              
+
+              
+
+              <h3>Request:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                            http://39.100.203.200:5920/api/v1/coffee/voucher_status
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                            <pre>{
+  &#34;Content-Length&#34;: &#34;191&#34;, 
+  &#34;Accept-Encoding&#34;: &#34;gzip, deflate&#34;, 
+  &#34;Accept&#34;: &#34;*/*&#34;, 
+  &#34;User-Agent&#34;: &#34;python-requests/2.23.0&#34;, 
+  &#34;Connection&#34;: &#34;keep-alive&#34;, 
+  &#34;Content-Type&#34;: &#34;application/json&#34;
+}</pre>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>body</th>
+                      <td>
+                        
+                            <pre>{
+  &#34;status&#34;: 3, 
+  &#34;user_id&#34;: 11, 
+  &#34;shop_type&#34;: 0, 
+  &#34;voucher_id&#34;: 1421, 
+  &#34;machine_id&#34;: &#34;abc&#34;, 
+  &#34;rd_session&#34;: &#34;L1JLG+UwziQX2jDaQRiEdmcXDeMMc9reBKRGx4Q2bV2Zap+428xgenUbYalr0Ugv/W/BjAqtuuBAtYkAsdWPlw==&#34;
+}</pre>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                            POST
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>Response:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>body</th>
+                        <td>
+                          
+                            
+                              <pre>{
+  &#34;message&#34;: &#34;SUCCESS&#34;, 
+  &#34;code&#34;: 200
+}</pre>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            UTF-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            http://39.100.203.200:5920/api/v1/coffee/voucher_status
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            <pre>{
+  &#34;Date&#34;: &#34;Wed, 04 Mar 2020 11:17:49 GMT&#34;, 
+  &#34;Content-Length&#34;: &#34;32&#34;, 
+  &#34;Content-Type&#34;: &#34;application/json; charset=UTF-8&#34;, 
+  &#34;Server&#34;: &#34;L&#34;
+}</pre>
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            OK
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            application/json; charset=UTF-8
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              <h3>Validators:</h3>
+                <div style="overflow: auto">
+                
+                
+                <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        status_code
+                      </td>
+                      <td>equals</td>
+                      <td>LazyString($expect_status_code)</td>
+                      <td>200</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        content.code
+                      </td>
+                      <td>equals</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                </table>
+                
+
+                
+                
+              </div>
+
+              <h3>Statistics:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>32</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>37.04</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>35.77</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+
+        
+
+      </td>
+    </tr>
+  
+    
+    
+    <tr id="record_1_3">
+      <th class="success" style="width:5em;">success</th>
+      <td colspan="2">update_voucher_status_from_3_to_5</td>
+      <td style="text-align:center;width:6em;">187.99 ms</td>
+      <td class="detail">
+
+        
+        
+        <a class="button" href="#popup_log_1_3_1">log-1</a>
+        <div id="popup_log_1_3_1" class="overlay">
+          <div class="popup">
+            <h2>Request and Response data</h2>
+            <a class="close" href="#record_1_3_1">&times;</a>
+
+            <div class="content">
+              <h3>Name: update_voucher_status_from_3_to_5</h3>
+
+              
+
+              
+
+              <h3>Request:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                            http://39.100.203.200:5920/api/v1/coffee/voucher_status
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                            <pre>{
+  &#34;Content-Length&#34;: &#34;191&#34;, 
+  &#34;Accept-Encoding&#34;: &#34;gzip, deflate&#34;, 
+  &#34;Accept&#34;: &#34;*/*&#34;, 
+  &#34;User-Agent&#34;: &#34;python-requests/2.23.0&#34;, 
+  &#34;Connection&#34;: &#34;keep-alive&#34;, 
+  &#34;Content-Type&#34;: &#34;application/json&#34;
+}</pre>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>body</th>
+                      <td>
+                        
+                            <pre>{
+  &#34;status&#34;: 5, 
+  &#34;user_id&#34;: 11, 
+  &#34;shop_type&#34;: 0, 
+  &#34;voucher_id&#34;: 1421, 
+  &#34;machine_id&#34;: &#34;abc&#34;, 
+  &#34;rd_session&#34;: &#34;L1JLG+UwziQX2jDaQRiEdmcXDeMMc9reBKRGx4Q2bV2Zap+428xgenUbYalr0Ugv/W/BjAqtuuBAtYkAsdWPlw==&#34;
+}</pre>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                            POST
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>Response:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>body</th>
+                        <td>
+                          
+                            
+                              <pre>{
+  &#34;message&#34;: &#34;SUCCESS&#34;, 
+  &#34;code&#34;: 200
+}</pre>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            UTF-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            http://39.100.203.200:5920/api/v1/coffee/voucher_status
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            <pre>{
+  &#34;Date&#34;: &#34;Wed, 04 Mar 2020 11:17:49 GMT&#34;, 
+  &#34;Content-Length&#34;: &#34;32&#34;, 
+  &#34;Content-Type&#34;: &#34;application/json; charset=UTF-8&#34;, 
+  &#34;Server&#34;: &#34;L&#34;
+}</pre>
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            OK
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            application/json; charset=UTF-8
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              <h3>Validators:</h3>
+                <div style="overflow: auto">
+                
+                
+                <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        status_code
+                      </td>
+                      <td>equals</td>
+                      <td>LazyString($expect_status_code)</td>
+                      <td>200</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        content.code
+                      </td>
+                      <td>equals</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                </table>
+                
+
+                
+                
+              </div>
+
+              <h3>Statistics:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>32</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>187.99</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>186.489</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+
+        
+
+      </td>
+    </tr>
+  
+  </table>
+  
+</body>

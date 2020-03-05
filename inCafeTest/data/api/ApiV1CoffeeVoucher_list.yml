@@ -1,0 +1,25 @@
+name: set voucher status
+base_url: $base_url
+variables:
+  expect_status_code: 200
+request:
+  url: /api/v1/coffee/voucher_list
+  method: GET
+#  headers:
+#    Content-Type: application/json
+#    enctype: raw
+#    Referer: https://servicewechat.com/wx814d860edd214fb0/devtools/page-frame.html
+#    Pragma: no-cache
+#    Host: 39.100.203.200:5920
+#    Cache-Control: no-cache
+#    User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1 wechatdevtools/1.02.1911180 MicroMessenger/7.0.4 Language/zh_CN webview/
+  params:
+    start: 0
+    limit: 10
+    status: 1
+    app_id: 0
+    user_id: $user_id
+#    rd_session: L1JLG+UwziQX2jDaQRiEdmcXDeMMc9reBKRGx4Q2bV2Zap+428xgenUbYalr0Ugv/W/BjAqtuuBAtYkAsdWPlw==
+    rd_session: $rd_session
+validate:
+  - eq: [status_code, $expect_status_code]

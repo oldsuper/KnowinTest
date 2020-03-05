@@ -1,0 +1,94 @@
+- config:
+    name: voucher_status_workflow
+    variables:
+      rd_session: L1JLG+UwziQX2jDaQRiEdmcXDeMMc9reBKRGx4Q2bV2Zap+428xgenUbYalr0Ugv/W/BjAqtuuBAtYkAsdWPlw==
+      user_id: 11
+      base_url: http://39.100.203.200:5920
+
+- test:
+    name: submit_order
+    api: inCafeTest/data/api/ApiV1CoffeeSubmit_order.yml
+    variables:
+      user_id: $user_id
+      rd_session: $rd_session
+      order: [{"coffee_id":5,"amount":1}]
+- test:
+    name: list_voucher_list
+    api: inCafeTest/data/api/ApiV1CoffeeVoucher_list.yml
+    variables:
+      user_id: $user_id
+      rd_session: $rd_session
+    extract:
+      - {"voucher_0_id": "content.data.0.voucher_id"}
+
+
+# 未使用->商品已售罄->未使用
+- test:
+    name: 1-10_update_voucher_status_from_1_to_10
+    api: inCafeTest/data/api/ApiV1CoffeeVoucher_status.yml
+    variables:
+      user_id: $user_id
+      rd_session: $rd_session
+      voucher_0_id: $voucher_0_id
+      status: 10
+
+# 未使用->其他错误->未使用
+- test:
+    name: 1-11_update_voucher_status_from_1_to_11
+    api: inCafeTest/data/api/ApiV1CoffeeVoucher_status.yml
+    variables:
+      user_id: $user_id
+      rd_session: $rd_session
+      voucher_0_id: $voucher_0_id
+      status: 11
+
+# 未使用->设备未就绪->未使用
+- test:
+    name: 1-12_update_voucher_status_from_1_to_12
+    api: inCafeTest/data/api/ApiV1CoffeeVoucher_status.yml
+    variables:
+      user_id: $user_id
+      rd_session: $rd_session
+      voucher_0_id: $voucher_0_id
+      status: 12
+
+# 未使用->设备进行时->未使用
+- test:
+    name: 1-9_update_voucher_status_from_1_to_9
+    api: inCafeTest/data/api/ApiV1CoffeeVoucher_status.yml
+    variables:
+      user_id: $user_id
+      rd_session: $rd_session
+      voucher_0_id: $voucher_0_id
+      status: 9
+
+
+
+# 未使用->已过期（不能使用的跳转）
+- test:
+    name: 1-8_update_voucher_status_from_1_to_8
+    api: inCafeTest/data/api/ApiV1CoffeeVoucher_statusFailure.yml
+    variables:
+      user_id: $user_id
+      rd_session: $rd_session
+      voucher_0_id: $voucher_0_id
+      status: 8
+      code: 10003
+# 未使用->制作中->制作失败->未使用
+- test:
+    name: 1-3-5_update_voucher_status_from_1_to_3
+    api: inCafeTest/data/api/ApiV1CoffeeVoucher_status.yml
+    variables:
+      user_id: $user_id
+      rd_session: $rd_session
+      voucher_0_id: $voucher_0_id
+      status: 3
+- test:
+    name: 1-3-5_update_voucher_status_from_3_to_5
+    api: inCafeTest/data/api/ApiV1CoffeeVoucher_status.yml
+    variables:
+      user_id: $user_id
+      rd_session: $rd_session
+      voucher_0_id: $voucher_0_id
+      status: 5
+
