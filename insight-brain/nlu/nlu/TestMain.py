@@ -12,6 +12,7 @@ import requests
 import uuid
 import json
 from jsonpath import jsonpath
+from functools import update_wrapper
 
 TestCaseFile = 'insight-brain/nlu/case/case.yml'
 
@@ -19,7 +20,12 @@ TestCaseFile = 'insight-brain/nlu/case/case.yml'
 def test_generator():
     testcases = yaml.load(file(TestCaseFile), Loader=yaml.FullLoader)
     for testcase in testcases:
-        yield run, testcase['test']
+        func = lambda: run(testcase['test'])
+        update_wrapper(func, run)
+        desc = '{0}_{1}'.format(testcase['test']['pattern_id'], testcase['test']['request']['query'].encode('utf-8'))
+        test_generator.__name__ = desc
+        func.description = desc
+        yield func
 
 
 def run(testcase):
