@@ -23,7 +23,7 @@ numpy==1.16.6
 pathlib2==2.3.5
 PyMySQL==0.9.3
 pyrsistent==0.15.7
-PyYAML==5.3
+PyYAML==5.4
 requests==2.23.0
 requests-toolbelt==0.9.1
 scandir==1.10.0
